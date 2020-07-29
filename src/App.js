@@ -9,7 +9,26 @@ class App extends Component {
             {name: "Sanath", age: "29"},
             {name: "Pramod", age: "28"},
             {name: "Madhawa", age: "32"}
-        ]
+        ],
+        otherState: "Something else"
+    }
+
+    switchHandler = () => {
+        //console.log("Was clicked!")
+        this.setState({
+            persons:[
+                {name: "Max", age: "29"},
+                {name: "Pramod", age: "28"},
+                {name: "Madhawa", age: "70"}
+            ]
+        })
+        // DO NOT use this way..state doesn't replace new state values
+        //this.state.person[0].name = "Max"
+
+        /* whenever state and props (these 2 affects the re-rendering) changes this re-renders and update the DOM.state is mutate and it merges the new
+        changes in state while comparing with previous state and new state.when re-renders the props also will be
+        get updated.state management use in class based components.
+        * */
     }
 
     render() {
@@ -17,7 +36,7 @@ class App extends Component {
             <div className="App">
                 <h1>Hi, I'm a React Application</h1>
                 <p>This is Really Working !</p>
-                <button>Switch Name</button>
+                <button onClick={this.switchHandler}>Switch Name</button>
                 <Person name={this.state.persons[0].name} age={this.state.persons[0].age}/>
                 <Person name={this.state.persons[1].name} age={this.state.persons[1].age}>Having two childeren !</Person>
                 <Person name={this.state.persons[2].name}age={this.state.persons[2].age}/>
