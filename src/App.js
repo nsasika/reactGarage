@@ -37,12 +37,31 @@ class App extends Component {
         })
     }
 
+    nameChangedHandler = (event) => {
+        this.setState({
+            persons: [
+                {name: "Nadeera", age: "15"},
+                {name: event.target.value, age: "28"},
+                {name: "Nadeeka", age: "14"}
+            ]
+        })
+    }
+
     render() {
+
+        const style = {
+          backgroundColor: 'white',
+          font: 'inherit',
+          padding: '8px',
+          cursor: 'pointer',
+          border: '1px solid blue'
+        }
+
         return (
             <div className="App">
                 <h1>Hi, I'm a React Application</h1>
                 <p>This is Really Working !</p>
-                <button onClick={() => this.switchHandler("Isuru")}>Switch Name</button>
+                <button style={style} onClick={() => this.switchHandler("Isuru")}>Switch Name</button>
                 <Person
                     name={this.state.persons[0].name}
                     age={this.state.persons[0].age}
@@ -50,7 +69,8 @@ class App extends Component {
                 <Person
                     click={this.switchHandler.bind(this, "Chale")}
                     name={this.state.persons[1].name}
-                    age={this.state.persons[1].age}>
+                    age={this.state.persons[1].age}
+                    changed={this.nameChangedHandler}>
                     Having two childeren !
                 </Person>
                 <Person
