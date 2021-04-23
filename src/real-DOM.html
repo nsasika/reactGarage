@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Example Actual DOM</title>
+</head>
+
+<body>
+
+<h1>Example of Actual DOM Rendering</h1>
+
+<div id="displayTime">My first paragraph.</div>
+
+<script>
+    function updateTime() {
+        var element = '<h1>Hello World!</h1>';
+        element += '<h1>Now the time is</h1>';
+        element += '<p>' + new Date().toLocaleTimeString() + '</p>';
+        document.getElementById('displayTime').innerHTML = element; 
+    }
+    // calls the function updateTime in every 3 seconds (3000 milliseconds):
+    window.setInterval(updateTime, 2000);
+</script>
+
+</body>
+</html>
