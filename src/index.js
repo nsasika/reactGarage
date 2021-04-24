@@ -1,9 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './containers/App';
+import Parent from './containers/Parent';
 
-function updateTime() {
+/*const updateTime = () =>  {
     const VirtualDOM = (
         <div>
             <h1>Example of Virtual DOM Rendering</h1>
@@ -19,9 +19,8 @@ function updateTime() {
 }
 
 // calls the function updateTime in every 2 seconds (2000 milliseconds):
-setInterval(updateTime, 2000);
+setInterval(updateTime, 2000);*/
 
 
-
-//ReactDOM.render(<App country="Sri lanka"/>, document.getElementById('root'));
+ReactDOM.render(<Parent/>, document.getElementById('root'));
 
