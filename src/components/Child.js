@@ -7,12 +7,12 @@ export class Child extends Component {
         this.state ={
             title: props.title
         }
-        console.log("* - Child constructor, state:->", this.state)
+        console.log("* - Child constructor, state:->", this.state, ", props", props)
     }
 
     shouldComponentUpdate(nextProps, nextState){
         console.log("* - Child shouldComponentUpdate")
-        return false;
+        return true;
     }
 
     // A valid state object (or null) must be returned
@@ -27,8 +27,8 @@ export class Child extends Component {
 
     static getDerivedStateFromProps(props, state) {
         console.log("* - Child getDerivedStateFromProps, state:->", state," props:->", props)
-        return null;
-        //return {title: "Hello Covid you are bad for us!"};
+        //return null;
+        return {title: "Hello Covid you are bad for us!"};
     }
 
     componentDidMount() {

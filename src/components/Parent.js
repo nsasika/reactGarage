@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import './App.css';
+import '../containers/App.css';
 import {Child} from "./Child";
 
 class Parent extends Component {
@@ -14,14 +14,15 @@ class Parent extends Component {
         super(props);
         this.state = {
             count: 0,
-            color: 'transparent',
-            title: "Hi, Welcome to Life Cycle Hooks Demo",
             showHeader: true
         }
         console.log("1 - Parent Constructor, state:->", this.state," props:->", props);
     }
 
-    // A valid state object (or null) must be returned
+    /* A valid state object (or null) must be returned
+
+    *  declared static to discourage any side-effects during the render phase
+    */
     static getDerivedStateFromProps(props, state) {
         console.log("2 - Parent getDerivedStateFromProps, state:->", state," props:->", props)
         return null;
@@ -33,9 +34,6 @@ class Parent extends Component {
     * */
     componentDidMount() {
         console.log("4 - Parent componentDidMount, state:->", this.state)
- /*       setTimeout(() => {
-            this.setState({color: "yellow"})
-        }, 1000)*/
     }
 
     /*
@@ -90,7 +88,7 @@ class Parent extends Component {
         console.log("3 - Parent render, state:->", this.state)
 
         const style = {
-            backgroundColor: this.state.color,
+            backgroundColor: 'transparent',
             font: 'inherit',
             padding: '8px',
             cursor: 'pointer',
@@ -104,7 +102,7 @@ class Parent extends Component {
         return (
             <div className="App">
                 {myHeader}
-                <h1>{this.state.title}</h1>
+                <h1>Hi, Welcome to Life Cycle Hooks Demo</h1>
                 <p>Count : {this.state.count}</p>
                 <div style={{
                     flexDirection: "row",

@@ -1,7 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import Parent from './containers/Parent';
+import {FunctionalParent} from "./components/FunctionalParent";
+import Parent from "./components/Parent";
 
 /*const updateTime = () =>  {
     const VirtualDOM = (
@@ -22,5 +23,5 @@ import Parent from './containers/Parent';
 setInterval(updateTime, 2000);*/
 
 
-ReactDOM.render(<Parent/>, document.getElementById('root'));
+ReactDOM.render(<FunctionalParent/>, document.getElementById('root'));
 
