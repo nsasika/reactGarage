@@ -8,7 +8,6 @@ class Parent extends Component {
 
     *The constructor() method is called with the props, as arguments, and you should always start by calling the super(props) before anything else,
     this will initiate the parent's constructor method and allows the component to inherit methods from its parent (React.Component).
-
     */
     constructor(props) {
         super(props);
@@ -53,6 +52,7 @@ class Parent extends Component {
         console.log("Parent getSnapshotBeforeUpdate, Before the update, the count was " + prevState.count + ", state:->", this.state)
         return null;
     }
+
     componentDidUpdate(prevProps, prevState, snapshot) {
         console.log("Parent componentDidUpdate, The updated, the count is " + this.state.count, snapshot)
     }
@@ -96,7 +96,7 @@ class Parent extends Component {
         }
 
         let myHeader;
-        if (this.state.showHeader) myHeader = <Child title="Hello Child!" />;
+        if (this.state.showHeader) myHeader = <Child title="Hello Covid!" />;
         else myHeader = (<div/>);
 
         return (

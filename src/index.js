@@ -4,7 +4,7 @@ import './index.css';
 import {FunctionalParent} from "./components/FunctionalParent";
 import Parent from "./components/Parent";
 
-/*const updateTime = () =>  {
+const updateTime = () =>  {
     const VirtualDOM = (
         <div>
             <h1>Example of Virtual DOM Rendering</h1>
@@ -20,8 +20,8 @@ import Parent from "./components/Parent";
 }
 
 // calls the function updateTime in every 2 seconds (2000 milliseconds):
-setInterval(updateTime, 2000);*/
+setInterval(updateTime, 2000);
 
 
-ReactDOM.render(<FunctionalParent/>, document.getElementById('root'));
+//ReactDOM.render(<FunctionalParent/>, document.getElementById('root'));
 

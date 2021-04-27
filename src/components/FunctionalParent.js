@@ -2,11 +2,15 @@ import React, {useEffect, useState, useMemo} from 'react';
 import '../containers/App.css';
 import {FunctionalChild} from "./FunctionalChild";
 import {MemoizedFunctionalChild} from "./MemoizedFunctionalChild";
+import {useDocumentTitle} from "../hooks/useDocumentTitle";
 
 export const FunctionalParent = () => {
     const [count, setCount] = useState(0);
     const [showHeader, setShowHeader] = useState(true);
     const [title, setTitle] = useState('Hello Child!');
+
+   /* const documentTitle = `You clicked ${count} times`
+    useDocumentTitle(documentTitle);*/
 
     const style = {
         backgroundColor: 'transparent',
@@ -43,7 +47,7 @@ export const FunctionalParent = () => {
 
     // run after every render when count changes.
     useEffect(() => {
-        console.log("FunctionalParent - componentDidUpdate", count);
+        console.log("FunctionalParent -", count);
     }, [count])
 
     useEffect(() => {
@@ -55,10 +59,10 @@ export const FunctionalParent = () => {
 
     let memoizedHeader = null;
 
-    // useMemo replace shouldComponentUpdate in life cycle hooks
+    //useMemo replace shouldComponentUpdate in life cycle hooks
     //let memoizedHeader = <MemoizedFunctionalChild title={title}/>
 
-  /*  let memoizedHeader = useMemo(()=> {
+   /* let memoizedHeader = useMemo(()=> {
         return <MemoizedFunctionalChild title={title}/>
     }, [title])*/
 

@@ -1,6 +1,11 @@
 import React, {useEffect, useState} from "react";
+import useWindowWidth from "../hooks/useWindowWidth";
 
 export const FunctionalChild = (props) => {
+
+    const onSmallScreen = useWindowWidth();
+
+    //console.log("onSmallScreen", onSmallScreen)
 
     const [title, setTitle] = useState(props.title);
 
@@ -13,7 +18,6 @@ export const FunctionalChild = (props) => {
         // It will be called right after fist render.
             console.log('FunctionalChild - componentDidMount');
     }, []);
-
 
     useEffect(() => {
         // It will be called before unmounting.
