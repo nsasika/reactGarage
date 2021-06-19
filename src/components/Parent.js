@@ -96,13 +96,13 @@ class Parent extends Component {
         }
 
         let myHeader;
-        if (this.state.showHeader) myHeader = <Child title="Hello Covid!" />;
+        if (this.state.showHeader) myHeader = <Child title="Welcome to Creative Tech Talk!" />;
         else myHeader = (<div/>);
 
         return (
             <div className="App">
                 {myHeader}
-                <h1>Hi, Welcome to Life Cycle Hooks Demo</h1>
+                <h1>Class based Component - Life Cycle Hooks Demo</h1>
                 <p>Count : {this.state.count}</p>
                 <div style={{
                     flexDirection: "row",

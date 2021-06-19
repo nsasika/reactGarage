@@ -7,10 +7,11 @@ import {useDocumentTitle} from "../hooks/useDocumentTitle";
 export const FunctionalParent = () => {
     const [count, setCount] = useState(0);
     const [showHeader, setShowHeader] = useState(true);
-    const [title, setTitle] = useState('Hello Child!');
+    const [title, setTitle] = useState('Hello Student!');
 
-   /* const documentTitle = `You clicked ${count} times`
-    useDocumentTitle(documentTitle);*/
+    // custom Hook to change the Title of the window (browser)
+    const documentTitle = `You clicked ${count} times`
+    useDocumentTitle(documentTitle);
 
     const style = {
         backgroundColor: 'transparent',
@@ -47,7 +48,7 @@ export const FunctionalParent = () => {
 
     // run after every render when count changes.
     useEffect(() => {
-        console.log("FunctionalParent -", count);
+        console.log("FunctionalParent - useEffect", count);
     }, [count])
 
     useEffect(() => {
@@ -57,14 +58,14 @@ export const FunctionalParent = () => {
         };
     }, []);
 
-    let memoizedHeader = null;
+   // let memoizedHeader = null;
 
     //useMemo replace shouldComponentUpdate in life cycle hooks
-    //let memoizedHeader = <MemoizedFunctionalChild title={title}/>
+   // let memoizedHeader = <MemoizedFunctionalChild title={title}/>
 
-   /* let memoizedHeader = useMemo(()=> {
+   let memoizedHeader = useMemo(()=> {
         return <MemoizedFunctionalChild title={title}/>
-    }, [title])*/
+    }, [title])
 
     let myHeader;
     if (showHeader) myHeader = <FunctionalChild title={title}/>;

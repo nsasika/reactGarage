@@ -12,7 +12,7 @@ export class Child extends Component {
 
     shouldComponentUpdate(nextProps, nextState){
         console.log("* - Child shouldComponentUpdate")
-        return false;
+        return true;
     }
 
     // A valid state object (or null) must be returned
@@ -27,8 +27,8 @@ export class Child extends Component {
 
     static getDerivedStateFromProps(props, state) {
         console.log("* - Child getDerivedStateFromProps, state:->", state," props:->", props)
-        return null;
-        //return {title: "Bye Covid for now !"};
+        //return null;
+        return {title: "Let's defeat Covid!!!"};
     }
 
     componentDidMount() {

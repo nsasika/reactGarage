@@ -3,7 +3,7 @@ import useWindowWidth from "../hooks/useWindowWidth";
 
 export const FunctionalChild = (props) => {
 
-    const onSmallScreen = useWindowWidth();
+    //const onSmallScreen = useWindowWidth();
 
     //console.log("onSmallScreen", onSmallScreen)
 
