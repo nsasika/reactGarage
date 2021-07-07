@@ -1,4 +1,5 @@
 import React, {useEffect, useState} from "react";
+import App from "../";
 
 export const MemoizedFunctionalChild = (props) => {
 
